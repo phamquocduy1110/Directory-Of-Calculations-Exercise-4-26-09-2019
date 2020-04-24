@@ -12,7 +12,6 @@ namespace UnitTest_Examples
 
             try
             {
-
                 sidea = int.Parse(arr_trianglesides[0]);
                 sideb = int.Parse(arr_trianglesides[1]);
                 sidec = int.Parse(arr_trianglesides[2]);
