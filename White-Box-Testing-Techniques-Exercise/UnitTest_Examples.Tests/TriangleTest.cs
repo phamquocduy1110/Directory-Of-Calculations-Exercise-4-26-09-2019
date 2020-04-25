@@ -369,7 +369,7 @@ namespace UnitTest_Examples.Tests
         }
 
         /// <summary>
-        /// T18: Kiểm tra nếu độ dài cạnh 3 không phải là số nguyên thì kết quả trả về lỗi nhập liệu
+        /// T20: Kiểm tra nếu độ dài cạnh 3 không phải là số nguyên thì kết quả trả về lỗi nhập liệu
         /// </summary>
         [TestMethod]
         public void CheckTriangle_WithSide3NotInteger_ShouldBeInputError()
