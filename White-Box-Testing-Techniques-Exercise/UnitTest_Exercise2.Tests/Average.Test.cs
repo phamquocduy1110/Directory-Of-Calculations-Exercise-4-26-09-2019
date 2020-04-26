@@ -47,8 +47,24 @@ namespace UnitTest_Exercise2.Tests
             minnum = 30;
             maxnum = 70;
 
+            while ((array_value[i] != -999) && (inputNumber < 100))
+            {
+                inputNumber++;
+                if ((array_value[i] >= minnum) && (array_value[i] <= maxnum))
+                {
+                    validNumber++;
+                    sum += array_value[i];
+                }
+                else break;
+                i++;
+            }
 
-            float expectedResult = 0;
+            if (validNumber > 0)
+                avg = sum / validNumber;
+            else
+                avg = -999;
+
+            float expectedResult = avg;
 
             //Action
             float actualResult = average.average(array_value, minnum, maxnum);
@@ -107,15 +123,24 @@ namespace UnitTest_Exercise2.Tests
             minnum = 1;
             maxnum = 10;
 
-            for (i = 0; i < 100; i++)
+            while ((array_value[i] != -999) && (inputNumber < 100))
             {
-                validNumber++;
-                sum += array_value[i];
+                inputNumber++;
+                if ((array_value[i] >= minnum) && (array_value[i] <= maxnum))
+                {
+                    validNumber++;
+                    sum += array_value[i];
+                }
+                else break;
+                i++;
             }
 
-            
+            if (validNumber > 0)
+                avg = sum / validNumber;
+            else
+                avg = -999;
 
-            float expectedResult = sum / validNumber;
+            float expectedResult = avg;
 
             //Action
             float actualResult = average.average(array_value, minnum, maxnum);
@@ -125,29 +150,83 @@ namespace UnitTest_Exercise2.Tests
         }
 
         /// <summary>
-        ///  TC5: Test array wiht 3 elements { 8, 9, 20 }, minnum = 1, maxnum = 10. The actualResult: <8.5>.
+        ///  TC5: Test array wiht 100 elements { 1,...,99 }, minnum = 1, maxnum = 50. The actualResult: <25.5>.
         /// </summary>
         [TestMethod]
         public void TestCase5()
         {
             //Arrange
-            min
-            int[] array_value = new int[100];
+            int[] array_value = new int[99];
 
-            array_value[0] = 1;
-            array_value[1] = 2;
-            array_value[2] = 3;
-            array_value[3] = 4;
-            array_value[4] = 5;
-            array_value[5] = 6;
-            array_value[6] = 7;
-            array_value[7] = 8;
-            array_value[8] = 9;
+            for (var i = 1; i < array_value.Length; i++)
+            {
+                array_value[i] = i;
+            }
 
-            array_value[9] = 10;
+            minnum = 1;
+            maxnum = 50;
 
-            
-            float expectedResult = sum / validNumber;
+            while ((array_value[i] != -999) && (inputNumber < 100))
+            {
+                inputNumber++;
+                if ((array_value[i] >= minnum) && (array_value[i] <= maxnum))
+                {
+                    validNumber++;
+                    sum += array_value[i];
+                }
+                else break;
+                i++;
+            }
+
+            if (validNumber > 0)
+                avg = sum / validNumber;
+            else
+                avg = -999;
+
+            float expectedResult = avg;
+
+            //Action
+            float actualResult = average.average(array_value, minnum, maxnum);
+
+            //Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        /// <summary>
+        ///  TC6: Test array wiht 100 elements { 1,...,99 }, minnum = 1, maxnum = 99. The actualResult: <50>.
+        /// </summary>
+        [TestMethod]
+        public void TestCase6()
+        {
+            //Arrange
+            int[] array_value = new int[99];
+
+            for (var i = 1; i < array_value.Length; i++)
+            {
+                array_value[i] = i;
+            }
+
+            minnum = 1;
+            maxnum = 99;
+
+            while ((array_value[i] != -999) && (inputNumber < 100))
+            {
+                inputNumber++;
+                if ((array_value[i] >= minnum) && (array_value[i] <= maxnum))
+                {
+                    validNumber++;
+                    sum += array_value[i];
+                }
+                else break;
+                i++;
+            }
+
+            if (validNumber > 0)
+                avg = sum / validNumber;
+            else
+                avg = -999;
+
+            float expectedResult = avg;
 
             //Action
             float actualResult = average.average(array_value, minnum, maxnum);
